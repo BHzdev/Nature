@@ -29,12 +29,6 @@ ul li a {
   letter-spacing: 2px;
 }
 
-ul li a.active {
-  background: #56cc9d;
-  color: white;
-  border-color: #56cc9d;
-}
-
 h1,
 h2,
 h3 {
@@ -130,7 +124,7 @@ img {
   float: left;
 }
 
-.js .item {
+[data-target] {
   opacity: 0;
   visibility: hidden;
   position: absolute;
@@ -138,7 +132,13 @@ img {
   transform: translate3d(-50px, 0, 0);
 }
 
-.js .item.active {
+[data-click].active {
+  background: #56cc9d;
+  color: white;
+  border-color: #56cc9d;
+}
+
+[data-target].active {
   opacity: 1;
   visibility: visible;
   position: relative;

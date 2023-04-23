@@ -1,27 +1,21 @@
-$(document).ready(function () {
-  let classActive = 'active';
+$('[data-group]').each(function () {
+  let $allTarget = $(this).find('[data-target]'),
+    $allClick = $(this).find('[data-click]'),
+    activeClass = 'active';
 
-  $('.animais .tab-menu a').first().addClass(classActive);
-  $('.animais .item').first().addClass(classActive);
+  $allTarget.first().addClass(activeClass);
+  $allClick.first().addClass(activeClass);
 
-  $('.animais .tab-menu a').click(function (e) {
+  $allClick.click(function (e) {
     e.preventDefault();
-    let itemId = $(this).attr('href');
 
-    $('.animais .tab-menu a, .animais .item').removeClass(classActive);
-    $(this).addClass(classActive);
-    $(itemId).addClass(classActive);
-  });
+    let id = $(this).data('click'),
+      $target = $('[data-target="' + id + '"]');
 
-  $('.florestas .tab-menu a').first().addClass(classActive);
-  $('.florestas .item').first().addClass(classActive);
+    $allClick.removeClass(activeClass);
+    $allTarget.removeClass(activeClass);
 
-  $('.florestas .tab-menu a').click(function (e) {
-    e.preventDefault();
-    let itemId = $(this).attr('href');
-
-    $('.florestas .tab-menu a, .florestas .item').removeClass(classActive);
-    $(this).addClass(classActive);
-    $(itemId).addClass(classActive);
+    $target.addClass(activeClass);
+    $(this).addClass(activeClass);
   });
 });
