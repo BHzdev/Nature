@@ -42,3 +42,20 @@ $('.logo').click(function (e) {
     500,
   );
 });
+
+$('section').each(function (e) {
+  let height = $(this).height(),
+    offSetTop = $(this).offset().top,
+    id = $(this).attr('id'),
+    menuHeight = $('.menu').innerHeight(),
+    $itemMenu = $('a[href="#' + id + '"]');
+
+  $(window).scroll(function (e) {
+    let scrollTop = $(window).scrollTop();
+    if (offSetTop < scrollTop && offSetTop + height - menuHeight > scrollTop) {
+      $itemMenu.addClass('active');
+    } else {
+      $itemMenu.removeClass('active');
+    }
+  });
+});
