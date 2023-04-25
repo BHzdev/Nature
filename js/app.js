@@ -43,14 +43,14 @@ $('.logo').click(function (e) {
   );
 });
 
-$('section').each(function (e) {
+$('section').each(function () {
   let height = $(this).height(),
     offSetTop = $(this).offset().top,
     id = $(this).attr('id'),
     menuHeight = $('.menu').innerHeight(),
     $itemMenu = $('a[href="#' + id + '"]');
 
-  $(window).scroll(function (e) {
+  $(window).scroll(function () {
     let scrollTop = $(window).scrollTop();
     if (offSetTop < scrollTop && offSetTop + height - menuHeight > scrollTop) {
       $itemMenu.addClass('active');
@@ -58,4 +58,9 @@ $('section').each(function (e) {
       $itemMenu.removeClass('active');
     }
   });
+});
+
+$('.mobile-btn').click(function () {
+  $(this).toggleClass('active');
+  $('.mobile-menu').toggleClass('active');
 });
