@@ -1,3 +1,4 @@
+// Change tab on click
 $('[data-group]').each(function () {
   let $allTarget = $(this).find('[data-target]'),
     $allClick = $(this).find('[data-click]'),
@@ -20,6 +21,7 @@ $('[data-group]').each(function () {
   });
 });
 
+// Smooth Scroll
 $('.menu-nav a[href^="#"]').click(function (e) {
   e.preventDefault();
   let id = $(this).attr('href'),
@@ -43,6 +45,7 @@ $('.logo').click(function (e) {
   );
 });
 
+// Active links
 $('section').each(function () {
   let height = $(this).height(),
     offSetTop = $(this).offset().top,
@@ -60,11 +63,13 @@ $('section').each(function () {
   });
 });
 
+// Mobile Menu
 $('.mobile-btn').click(function () {
   $(this).toggleClass('active');
   $('.mobile-menu').toggleClass('active');
 });
 
+// Slider
 $('.slide > :first').addClass('active');
 
 function rotateSlide() {
