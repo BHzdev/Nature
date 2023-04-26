@@ -64,20 +64,25 @@ $('.logo').click(function (e) {
 
 // Active links
 $('section').each(function () {
-  let height = $(this).height(),
-    offSetTop = $(this).offset().top,
-    id = $(this).attr('id'),
+  var height = $(this).height(),
+    offsetTop = $(this).offset().top,
     menuHeight = $('.menu').innerHeight(),
+    id = $(this).attr('id'),
     $itemMenu = $('a[href="#' + id + '"]');
 
-  $(window).scroll(function () {
-    let scrollTop = $(window).scrollTop();
-    if (offSetTop < scrollTop && offSetTop + height - menuHeight > scrollTop) {
-      $itemMenu.addClass('active');
-    } else {
-      $itemMenu.removeClass('active');
-    }
-  });
+  $(window).scroll(
+    debounce(function () {
+      var scrollTop = $(window).scrollTop();
+      if (
+        offsetTop - menuHeight < scrollTop &&
+        offsetTop + height - menuHeight > scrollTop
+      ) {
+        $itemMenu.addClass('active');
+      } else {
+        $itemMenu.removeClass('active');
+      }
+    }, 200),
+  );
 });
 
 // Mobile Menu
