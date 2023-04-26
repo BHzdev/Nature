@@ -118,7 +118,7 @@ h1 {
   color: #3b3b3b;
 }
 
-h2 {
+.item h2 {
   display: inline-block;
   padding: 0 20px 6px 20px;
   min-width: 200px;
@@ -147,7 +147,7 @@ p {
   margin-bottom: 40px;
 }
 
-img {
+.item-img img {
   display: block;
   max-width: 100%;
   float: right;
@@ -290,4 +290,25 @@ img {
     width: 100%;
     text-align: center;
   }
+}
+
+.introducao {
+  background: black;
+}
+
+.introducao h2 {
+  color: white;
+  text-align: center;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: -2em;
+  margin-bottom: 2em;
+  line-height: 0;
+}
+
+.introducao img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
 }
