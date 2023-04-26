@@ -100,3 +100,5 @@ function slider(sliderName, velocidade) {
 }
 
 slider('introducao', 2000);
+
+// Scroll Animation
